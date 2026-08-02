@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mazi Hua — AI Agent & Automation Engineer for Hire</title>
+    <meta name="description" content="AI agent deployment, RAG systems, financial data tools, and Claude Code integrations. Available for contract work.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --border: #2a2a2a;
+            --text: #e8e8e8;
+            --text-dim: #999;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --success: #10b981;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 24px; }
+        
+        /* Hero */
+        .hero { padding: 80px 0 60px; border-bottom: 1px solid var(--border); }
+        .hero-tag { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            background: rgba(99, 102, 241, 0.1); 
+            border: 1px solid var(--accent); 
+            border-radius: 20px; 
+            font-size: 13px; 
+            color: var(--accent); 
+            margin-bottom: 24px; 
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .hero h1 { 
+            font-size: 48px; 
+            font-weight: 700; 
+            line-height: 1.1; 
+            margin-bottom: 16px; 
+            letter-spacing: -0.02em;
+        }
+        .hero h1 .gradient { 
+            background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-clip: text; 
+        }
+        .hero .tagline { 
+            font-size: 20px; 
+            color: var(--text-dim); 
+            max-width: 700px; 
+            margin-bottom: 32px;
+        }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.15s;
+            font-size: 15px;
+        }
+        .btn-primary { 
+            background: var(--accent); 
+            color: white; 
+        }
+        .btn-primary:hover { 
+            background: var(--accent-hover); 
+            transform: translateY(-1px); 
+        }
+        .btn-ghost { 
+            background: transparent; 
+            color: var(--text); 
+            border: 1px solid var(--border); 
+        }
+        .btn-ghost:hover { 
+            border-color: var(--text-dim); 
+        }
+        
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 32px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .stat-num { 
+            font-size: 32px; 
+            font-weight: 700; 
+            color: var(--accent); 
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .stat-label { 
+            font-size: 13px; 
+            color: var(--text-dim); 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            margin-top: 4px;
+        }
+        
+        /* Sections */
+        section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+        section:last-child { border-bottom: none; }
+        h2 { 
+            font-size: 28px; 
+            margin-bottom: 8px; 
+            font-weight: 700; 
+        }
+        .section-sub { 
+            color: var(--text-dim); 
+            margin-bottom: 32px; 
+            font-size: 15px;
+        }
+        
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .service {
+            padding: 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.15s;
+        }
+        .service:hover { 
+            border-color: var(--accent); 
+            transform: translateY(-2px); 
+        }
+        .service-icon { 
+            font-size: 28px; 
+            margin-bottom: 12px; 
+        }
+        .service h3 { 
+            font-size: 17px; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+        }
+        .service p { 
+            font-size: 14px; 
+            color: var(--text-dim); 
+            line-height: 1.5; 
+        }
+        .service-price {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project {
+            padding: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.15s;
+        }
+        .project:hover { border-color: var(--text-dim); }
+        .project-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .project h3 { 
+            font-size: 16px; 
+            font-weight: 600; 
+        }
+        .project-lang { 
+            font-size: 11px; 
+            color: var(--text-dim); 
+            padding: 2px 8px; 
+            background: rgba(255,255,255,0.05); 
+            border-radius: 4px; 
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .project p { 
+            font-size: 14px; 
+            color: var(--text-dim); 
+            margin-bottom: 12px; 
+        }
+        .project a { 
+            color: var(--accent); 
+            text-decoration: none; 
+            font-size: 13px; 
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .project a:hover { color: var(--accent-hover); }
+        
+        /* Testimonials / Process */
+        .process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .process-step {
+            position: relative;
+            padding: 24px 0;
+        }
+        .process-num {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 8px;
+            opacity: 0.4;
+        }
+        .process h4 { 
+            font-size: 16px; 
+            margin-bottom: 6px; 
+            font-weight: 600; 
+        }
+        .process p { 
+            font-size: 14px; 
+            color: var(--text-dim); 
+        }
+        
+        /* CTA */
+        .cta {
+            padding: 60px 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .cta h2 { margin-bottom: 16px; }
+        .cta p { 
+            color: var(--text-dim); 
+            margin-bottom: 24px; 
+            font-size: 15px;
+        }
+        .contact-info {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+        }
+        .contact-info a {
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+        .contact-info a:hover { color: var(--accent); }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-dim);
+            font-size: 13px;
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .hero .tagline { font-size: 16px; }
+            .container { padding: 40px 16px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- HERO -->
+    <section class="hero" style="border-bottom: none; padding-top: 0;">
+        <div class="hero-tag">⚡ Available for contract work</div>
+        <h1>AI agents &amp; automation, <span class="gradient">shipped to production.</span></h1>
+        <p class="tagline">I help startups and small teams deploy Claude Code / GPT / local LLM workflows that actually work in the real world — RAG systems, financial data tools, custom agents, and end-to-end automations.</p>
+        <div class="hero-actions">
+            <a href="mailto:mazihua@users.noreply.github.com" class="btn btn-primary">📧 Email me</a>
+            <a href="#services" class="btn btn-ghost">View services →</a>
+        </div>
+    </section>
+    
+    <!-- STATS -->
+    <section style="padding: 32px 0;">
+        <div class="stats">
+            <div>
+                <div class="stat-num">28</div>
+                <div class="stat-label">Public repos</div>
+            </div>
+            <div>
+                <div class="stat-num">12</div>
+                <div class="stat-label">AI tools wired</div>
+            </div>
+            <div>
+                <div class="stat-num">7</div>
+                <div class="stat-label">Reusable skills</div>
+            </div>
+            <div>
+                <div class="stat-num">2.4k+</div>
+                <div class="stat-label">Lines of code (recent projects)</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SERVICES -->
+    <section id="services">
+        <h2>Services</h2>
+        <p class="section-sub">Fixed-scope deliverables, fixed price. No retainers, no surprises.</p>
+        <div class="services-grid">
+            <div class="service">
+                <div class="service-icon">🤖</div>
+                <h3>AI Agent Deployment</h3>
+                <p>Claude Code / Codex / Hermes Agent integrated with your existing tools (Slack, Notion, GitHub, CRMs). Code included.</p>
+                <div class="service-price">$3,000 – $15,000</div>
+            </div>
+            <div class="service">
+                <div class="service-icon">📚</div>
+                <h3>RAG System Build</h3>
+                <p>Document ingestion, vector store setup, retrieval pipeline, evaluation harness. Production-ready, not a demo.</p>
+                <div class="service-price">$2,500 – $10,000</div>
+            </div>
+            <div class="service">
+                <div class="service-icon">📊</div>
+                <h3>Financial Data Tooling</h3>
+                <p>A-share / ETF / LOF data pipelines, screening scanners, alerting bots. Built on akshare, etfirst, or your stack.</p>
+                <div class="service-price">$2,000 – $8,000</div>
+            </div>
+            <div class="service">
+                <div class="service-icon">⚙️</div>
+                <h3>Workflow Automation</h3>
+                <p>Replace repetitive ops with scripts + LLM. Lead enrichment, content pipelines, data sync, internal dashboards.</p>
+                <div class="service-price">$1,500 – $6,000</div>
+            </div>
+            <div class="service">
+                <div class="service-icon">🧪</div>
+                <h3>Code Review &amp; Audit</h3>
+                <p>Existing AI/agent code review. Identify failure modes, security holes, eval gaps. Written report + fix PR.</p>
+                <div class="service-price">$800 – $3,000</div>
+            </div>
+            <div class="service">
+                <div class="service-icon">🎓</div>
+                <h3>Team Training (4h)</h3>
+                <p>Hands-on workshop for your team on Claude Code / Codex / agent patterns. Materials + recordings included.</p>
+                <div class="service-price">$1,200 / session</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+        <h2>Selected Work</h2>
+        <p class="section-sub">Public repos from my own stack — production-tested before I deploy it for clients.</p>
+        <div class="portfolio-grid">
+            <div class="project">
+                <div class="project-head">
+                    <h3>hermes-agent</h3>
+                    <span class="project-lang">Python</span>
+                </div>
+                <p>Self-improving AI agent with built-in learning loop, persistent memory, and skills system.</p>
+                <a href="https://github.com/mazihua-lgtm/hermes-agent" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>hermes-workspace</h3>
+                    <span class="project-lang">TypeScript</span>
+                </div>
+                <p>Native web workspace — chat, files, memory, skills, terminal in one PWA.</p>
+                <a href="https://github.com/mazihua-lgtm/hermes-workspace" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>dexter</h3>
+                    <span class="project-lang">TypeScript</span>
+                </div>
+                <p>Autonomous financial research agent — task planning, self-reflection, real-time market data.</p>
+                <a href="https://github.com/mazihua-lgtm/dexter" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>mempalace</h3>
+                    <span class="project-lang">Python</span>
+                </div>
+                <p>AI memory system — raw verbatim storage + semantic search. 96.6% LongMemEval score.</p>
+                <a href="https://github.com/mazihua-lgtm/mempalace" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>vibeproxy</h3>
+                    <span class="project-lang">Swift</span>
+                </div>
+                <p>macOS menu bar app — use Claude Code / ChatGPT / Gemini subscriptions with AI tools.</p>
+                <a href="https://github.com/mazihua-lgtm/vibeproxy" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>zcode-finance-toolkit</h3>
+                    <span class="project-lang">Python</span>
+                </div>
+                <p>A-share ETF/LOF diagnosis plugin — multi-factor scanner + auto alerting system.</p>
+                <a href="https://github.com/mazihua-lgtm/zcode-finance-toolkit" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>agency-agents</h3>
+                    <span class="project-lang">Shell</span>
+                </div>
+                <p>Collection of AI agent personalities — frontend, content, community specialists.</p>
+                <a href="https://github.com/mazihua-lgtm/agency-agents" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>devpilot</h3>
+                    <span class="project-lang">Python</span>
+                </div>
+                <p>AI dev assistant — code generation, refactoring, documentation automation.</p>
+                <a href="https://github.com/mazihua-lgtm/devpilot" target="_blank">View repo →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PROCESS -->
+    <section>
+        <h2>How I Work</h2>
+        <p class="section-sub">Predictable. Documented. No scope creep.</p>
+        <div class="process">
+            <div class="process-step">
+                <div class="process-num">01</div>
+                <h4>Scope call (30 min)</h4>
+                <p>Free. We agree on the deliverable, deadline, and price. No obligation.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">02</div>
+                <h4>50% upfront</h4>
+                <p>Invoice via Stripe / Wise / PayPal. 50% starts the work.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">03</div>
+                <h4>Build in public</h4>
+                <p>Daily updates in shared Slack/Discord. Code visible in a private repo from day one.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-num">04</div>
+                <h4>Ship + handoff</h4>
+                <p>50% on delivery. 14-day bug-fix warranty. You own all the code.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA -->
+    <div class="cta">
+        <h2>Got something to build?</h2>
+        <p>30-min scope call is free. Tell me what you're trying to do.</p>
+        <a href="mailto:mazihua@users.noreply.github.com" class="btn btn-primary">📧 Email me</a>
+        <div class="contact-info">
+            <a href="https://github.com/mazihua-lgtm">github.com/mazihua-lgtm</a>
+            <a href="https://mazihua-lgtm.github.io/">mazihua-lgtm.github.io</a>
+            <span>UTC+8 · Shanghai</span>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 Mazi Hua · Built with Hugo-like restraint, deployed from Singapore.</p>
+    </footer>
+</div>
+</body>
+</html>
