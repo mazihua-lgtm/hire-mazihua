@@ -294,17 +294,20 @@
             <a href="mailto:mazihua@users.noreply.github.com" class="btn btn-primary">📧 Email me</a>
             <a href="#services" class="btn btn-ghost">View services →</a>
         </div>
+        <div style="margin-top: 16px;">
+            <a href="https://github.com/mazihua-lgtm/intentguard-pr-bot" target="_blank" style="color: var(--text-dim); font-size: 13px;">🔍 See IntentGuard in action →</a>
+        </div>
     </section>
     
     <!-- STATS — 真实数字（基于审计报告） -->
     <section style="padding: 32px 0;">
         <div class="stats">
             <div>
-                <div class="stat-num">14</div>
+                <div class="stat-num">16</div>
                 <div class="stat-label">Original public repos</div>
             </div>
             <div>
-                <div class="stat-num">6</div>
+                <div class="stat-num">8</div>
                 <div class="stat-label">Production-ready skills</div>
             </div>
             <div>
@@ -312,7 +315,7 @@
                 <div class="stat-label">AI tools wired &amp; verified</div>
             </div>
             <div>
-                <div class="stat-num">3</div>
+                <div class="stat-num">4</div>
                 <div class="stat-label">Flask web apps shipped</div>
             </div>
         </div>
@@ -366,6 +369,7 @@
     <section id="portfolio">
         <h2>Selected Original Work</h2>
         <p class="section-sub">Projects I built from scratch, tested locally, and run in production. (My forks of upstream projects are not listed here.)</p>
+        <p class="section-sub" style="color: var(--accent); margin-top: 8px;">🆕 Just shipped: intentguard-pr-bot — GitHub Action for AI code risk review (SARIF / BYOK / private deploy).</p>
         <div class="portfolio-grid">
             <div class="project">
                 <div class="project-head">
@@ -414,6 +418,14 @@
                 </div>
                 <p>AI dev assistant — code generation, refactoring, documentation automation. (Currently tightening README.)</p>
                 <a href="https://github.com/mazihua-lgtm/devpilot" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>intentguard-pr-bot</h3>
+                    <span class="project-lang">Python + YAML</span>
+                </div>
+                <p>GitHub Action that understands PR intent before reviewing diff. 4 risk categories (auth bypass / API contract / DB migration / critical path). SARIF output, BYOK, private deploy.</p>
+                <a href="https://github.com/mazihua-lgtm/intentguard-pr-bot" target="_blank">View repo →</a>
             </div>
         </div>
     </section>
