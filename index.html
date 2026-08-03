@@ -210,7 +210,7 @@
         }
         .project a:hover { color: var(--accent-hover); }
         
-        /* Testimonials / Process */
+        /* Process */
         .process {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -296,24 +296,24 @@
         </div>
     </section>
     
-    <!-- STATS -->
+    <!-- STATS — 真实数字（基于审计报告） -->
     <section style="padding: 32px 0;">
         <div class="stats">
             <div>
-                <div class="stat-num">28</div>
-                <div class="stat-label">Public repos</div>
+                <div class="stat-num">14</div>
+                <div class="stat-label">Original public repos</div>
+            </div>
+            <div>
+                <div class="stat-num">6</div>
+                <div class="stat-label">Production-ready skills</div>
             </div>
             <div>
                 <div class="stat-num">12</div>
-                <div class="stat-label">AI tools wired</div>
+                <div class="stat-label">AI tools wired &amp; verified</div>
             </div>
             <div>
-                <div class="stat-num">7</div>
-                <div class="stat-label">Reusable skills</div>
-            </div>
-            <div>
-                <div class="stat-num">2.4k+</div>
-                <div class="stat-label">Lines of code (recent projects)</div>
+                <div class="stat-num">3</div>
+                <div class="stat-label">Flask web apps shipped</div>
             </div>
         </div>
     </section>
@@ -326,7 +326,7 @@
             <div class="service">
                 <div class="service-icon">🤖</div>
                 <h3>AI Agent Deployment</h3>
-                <p>Claude Code / Codex / Hermes Agent integrated with your existing tools (Slack, Notion, GitHub, CRMs). Code included.</p>
+                <p>Claude Code / Codex / OpenCode integrated with your existing tools (Slack, Notion, GitHub, CRMs). Code included.</p>
                 <div class="service-price">$3,000 – $15,000</div>
             </div>
             <div class="service">
@@ -362,73 +362,57 @@
         </div>
     </section>
     
-    <!-- PORTFOLIO -->
+    <!-- PORTFOLIO — 只列 6 个真实原创项目（不列 fork） -->
     <section id="portfolio">
-        <h2>Selected Work</h2>
-        <p class="section-sub">Public repos from my own stack — production-tested before I deploy it for clients.</p>
+        <h2>Selected Original Work</h2>
+        <p class="section-sub">Projects I built from scratch, tested locally, and run in production. (My forks of upstream projects are not listed here.)</p>
         <div class="portfolio-grid">
             <div class="project">
                 <div class="project-head">
-                    <h3>hermes-agent</h3>
+                    <h3>etf-diagnosis-skill</h3>
                     <span class="project-lang">Python</span>
                 </div>
-                <p>Self-improving AI agent with built-in learning loop, persistent memory, and skills system.</p>
-                <a href="https://github.com/mazihua-lgtm/hermes-agent" target="_blank">View repo →</a>
+                <p>A-share ETF/LOF diagnosis — multi-factor analyzer + Flask web app + alert hooks. Tested on real data, runs in production.</p>
+                <a href="https://github.com/mazihua-lgtm/etf-diagnosis-skill" target="_blank">View repo →</a>
             </div>
             <div class="project">
                 <div class="project-head">
-                    <h3>hermes-workspace</h3>
-                    <span class="project-lang">TypeScript</span>
-                </div>
-                <p>Native web workspace — chat, files, memory, skills, terminal in one PWA.</p>
-                <a href="https://github.com/mazihua-lgtm/hermes-workspace" target="_blank">View repo →</a>
-            </div>
-            <div class="project">
-                <div class="project-head">
-                    <h3>dexter</h3>
-                    <span class="project-lang">TypeScript</span>
-                </div>
-                <p>Autonomous financial research agent — task planning, self-reflection, real-time market data.</p>
-                <a href="https://github.com/mazihua-lgtm/dexter" target="_blank">View repo →</a>
-            </div>
-            <div class="project">
-                <div class="project-head">
-                    <h3>mempalace</h3>
+                    <h3>promptpress</h3>
                     <span class="project-lang">Python</span>
                 </div>
-                <p>AI memory system — raw verbatim storage + semantic search. 96.6% LongMemEval score.</p>
-                <a href="https://github.com/mazihua-lgtm/mempalace" target="_blank">View repo →</a>
+                <p>Pure-rule prompt compressor — 33-42% token reduction, zero API dependency, 198 lines. Plug-into-anywhere.</p>
+                <a href="https://github.com/mazihua-lgtm/promptpress" target="_blank">View repo →</a>
             </div>
             <div class="project">
                 <div class="project-head">
-                    <h3>vibeproxy</h3>
-                    <span class="project-lang">Swift</span>
+                    <h3>codegraph</h3>
+                    <span class="project-lang">Python</span>
                 </div>
-                <p>macOS menu bar app — use Claude Code / ChatGPT / Gemini subscriptions with AI tools.</p>
-                <a href="https://github.com/mazihua-lgtm/vibeproxy" target="_blank">View repo →</a>
+                <p>Multi-language AST parser (Python/JS/SQL/Prisma) for code-understanding pipelines. 392 lines, zero heavy deps.</p>
+                <a href="https://github.com/mazihua-lgtm/codegraph" target="_blank">View repo →</a>
+            </div>
+            <div class="project">
+                <div class="project-head">
+                    <h3>changeguard</h3>
+                    <span class="project-lang">Python</span>
+                </div>
+                <p>Pre-commit security scanner — secret detection (sk-/RSA/.env), 327 lines, pluggable rules.</p>
+                <a href="https://github.com/mazihua-lgtm/changeguard" target="_blank">View repo →</a>
             </div>
             <div class="project">
                 <div class="project-head">
                     <h3>zcode-finance-toolkit</h3>
                     <span class="project-lang">Python</span>
                 </div>
-                <p>A-share ETF/LOF diagnosis plugin — multi-factor scanner + auto alerting system.</p>
+                <p>Plugin + 9 skills + 2 hooks for A-share research workflows. Aggregated toolkit, 11 commits of iteration.</p>
                 <a href="https://github.com/mazihua-lgtm/zcode-finance-toolkit" target="_blank">View repo →</a>
-            </div>
-            <div class="project">
-                <div class="project-head">
-                    <h3>agency-agents</h3>
-                    <span class="project-lang">Shell</span>
-                </div>
-                <p>Collection of AI agent personalities — frontend, content, community specialists.</p>
-                <a href="https://github.com/mazihua-lgtm/agency-agents" target="_blank">View repo →</a>
             </div>
             <div class="project">
                 <div class="project-head">
                     <h3>devpilot</h3>
                     <span class="project-lang">Python</span>
                 </div>
-                <p>AI dev assistant — code generation, refactoring, documentation automation.</p>
+                <p>AI dev assistant — code generation, refactoring, documentation automation. (Currently tightening README.)</p>
                 <a href="https://github.com/mazihua-lgtm/devpilot" target="_blank">View repo →</a>
             </div>
         </div>
@@ -457,7 +441,7 @@
             <div class="process-step">
                 <div class="process-num">04</div>
                 <h4>Ship + handoff</h4>
-                <p>50% on delivery. 14-day bug-fix warranty. You own all the code.</p>
+                <p>50% on delivery. 14-day bug-fix warranty. You own all the code (MIT).</p>
             </div>
         </div>
     </section>
@@ -469,13 +453,13 @@
         <a href="mailto:mazihua@users.noreply.github.com" class="btn btn-primary">📧 Email me</a>
         <div class="contact-info">
             <a href="https://github.com/mazihua-lgtm">github.com/mazihua-lgtm</a>
-            <a href="https://mazihua-lgtm.github.io/">mazihua-lgtm.github.io</a>
-            <span>UTC+8 · Shanghai</span>
+            <a href="https://mazihua-lgtm.github.io/hire-mazihua/">this portfolio</a>
+            <span>UTC+8 · Shanghai · CN/EN</span>
         </div>
     </div>
     
     <footer>
-        <p>© 2026 Mazi Hua · Built with Hugo-like restraint, deployed from Singapore.</p>
+        <p>© 2026 Mazi Hua · Solo AI engineer, open-source contributor.</p>
     </footer>
 </div>
 </body>
